@@ -17,8 +17,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
-    background: #0d6efd;
+    height: 70px; /* Navbar height */
+    padding: 16px 35px; /* Navbar padding */
+    background-color: #333;
+
+
 }
 
 .navbar .logo img {
@@ -60,10 +63,15 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom, #5c97ff, #ac61de);
+    background: linear-gradient(to bottom, #ff4e50, #f9d423);
     text-align: center;
     color: white;
     padding: 60px 20px;
+    min-height: 45vh; /* Hero section now takes 45% of screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 {
@@ -76,20 +84,30 @@ body {
     margin-bottom: 20px;
 }
 
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 15px; /* Space between input and button */
+}
+
 .search-bar input {
-    padding: 10px;
-    width: 60%;
+    padding: 12px;
+    width: 34vh; /* Increased search box width */
     border: none;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
 }
 
 .search-bar button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    background: #dc3545;
-    color: white;
-    border-radius: 0 5px 5px 0;
+    background: #dc3545; /* Matched button color to nav button */
+    color: #fff; /* Matched button text color to nav button */
+    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 /* Services Section */
