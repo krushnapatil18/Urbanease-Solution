@@ -1,36 +1,32 @@
-// Open Profile Modal
-document.getElementById('profileLink').addEventListener('click', function() {
-    document.getElementById('profileModal').style.display = 'flex';
-});
+document.addEventListener('DOMContentLoaded', () => {
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    const loginModal = document.getElementById('login-modal');
+    const signupModal = document.getElementById('signup-modal');
+    const closeLoginBtn = document.getElementById('close-login');
+    const closeSignupBtn = document.getElementById('close-signup');
 
-// Close Profile Modal by clicking the Close Button or outside the modal
-document.getElementById('closeModal').addEventListener('click', function() {
-    document.getElementById('profileModal').style.display = 'none';
-});
+    loginBtn.addEventListener('click', () => {
+        loginModal.style.display = 'block';
+    });
 
-// Close the modal if clicked outside of it
-window.addEventListener('click', function(e) {
-    if (e.target === document.getElementById('profileModal')) {
-        document.getElementById('profileModal').style.display = 'none';
-    }
-});
+    signupBtn.addEventListener('click', () => {
+        signupModal.style.display = 'block';
+    });
 
-// Handle login button click
-document.getElementById('loginBtn').addEventListener('click', function() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    closeLoginBtn.addEventListener('click', () => {
+        loginModal.style.display = 'none';
+    });
 
-    if (email && password) {
-        alert('Login successful');
-        document.getElementById('profileModal').style.display = 'none';
-    } else {
-        alert('Please fill in both fields');
-    }
-});
+    closeSignupBtn.addEventListener('click', () => {
+        signupModal.style.display = 'none';
+    });
 
-// Change modal heading when Sign Up link is clicked
-document.getElementById('signupLink').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('modalHeading').textContent = 'Sign Up';
-    document.getElementById('loginBtn').textContent = 'Sign Up';
+    window.addEventListener('click', (event) => {
+        if (event.target == loginModal) {
+            loginModal.style.display = 'none';
+        } else if (event.target == signupModal) {
+            signupModal.style.display = 'none';
+        }
+    });
 });
