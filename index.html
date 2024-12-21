@@ -19,7 +19,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#" id="contact-link">Contact Us</a></li>
             </ul>
             <div class="auth-buttons">
                 <button class="login" id="login-btn">Login</button>
@@ -38,29 +38,38 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <img src="" alt="Home Services">
-                <h3>Home Services</h3>
-                <p>Expert assistance for home maintenance and improvement.</p>
-            </div>
-            <div class="card">
-                <img src="smart-icon.png" alt="Smart Living">
-                <h3>Smart Living & Technologies</h3>
-                <p>Advanced solutions for eco-friendly and tech-integrated living.</p>
-            </div>
-            <div class="card">
-                <img src="renovation-icon.png" alt="Renovation">
-                <h3>Renovation & Construction</h3>
-                <p>Comprehensive remodeling and construction services.</p>
-            </div>
+<!-- Services Section -->
+<section class="services" id="services">
+    <h1>Explore the Services We Offer</h1>
+    <div class="service-cards">
+        <div class="card">
+            <img src="assets/home-icon.png" alt="Home Services">
+            <h3>Home Services</h3>
+            <p>Expert assistance for home maintenance and improvement.</p>
+            <button>More</button>
         </div>
-    </section>
+        <div class="card">
+            <img src="assets/smart-icon.png" alt="Smart Living">
+            <h3>Smart Living & Technologies</h3>
+            <p>Advanced solutions for eco-friendly and tech-integrated living.</p>
+            <button>More</button>
+        </div>
+        <div class="card">
+            <img src="assets/renovation-icon.png" alt="Renovation">
+            <h3>Renovation & Construction</h3>
+            <p>Comprehensive remodeling and construction services.</p>
+            <button>More</button>
+        </div>
+        <div class="card">
+            <img src="assets/lifestyle-icon.png" alt="Lifestyle Services">
+            <h3>Lifestyle Services</h3>
+            <p>Enhancing your lifestyle with personalized services.</p>
+            <button>More</button>
+        </div>
+    </div>
+</section>
 
-    <!-- About Us Section -->
+  <!-- About Us Section -->
     <section class="about" id="about">
         <h2>About Us</h2>
         <div class="about-content">
@@ -84,7 +93,6 @@
                 <img src="assets/about-us.jpg" alt="About Us Image">
             </div>
         </div>
-    
     </section>
 
     <!-- Login Modal -->
@@ -118,6 +126,39 @@
             </form>
         </div>
     </div>
+
+    <!-- Contact Us Modal -->
+<div class="modal" id="contact-modal">
+    <div class="modal-content">
+        <span class="close-btn" id="close-contact">&times;</span>
+        <div class="contact-container">
+            <div class="contact-image">
+                <img src="assets/contact-image.jpg" alt="Contact Us Image">
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <form>
+                    <label for="contact-name">Name:</label>
+                    <input type="text" id="contact-name" required>
+                    <label for="contact-email">Email:</label>
+                    <input type="email" id="contact-email" required>
+                    <label for="contact-phone">Phone:</label>
+                    <input type="tel" id="contact-phone" required>
+                    <label for="contact-message">Message:</label>
+                    <textarea id="contact-message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Footer -->
     <footer>

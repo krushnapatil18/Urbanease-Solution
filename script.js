@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const signupModal = document.getElementById('signup-modal');
     const closeLoginBtn = document.getElementById('close-login');
     const closeSignupBtn = document.getElementById('close-signup');
+    const contactLink = document.getElementById('contact-link');
+    const contactModal = document.getElementById('contact-modal');
+    const closeContactBtn = document.getElementById('close-contact');
 
     loginBtn.addEventListener('click', () => {
         loginModal.style.display = 'block';
@@ -27,6 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
             loginModal.style.display = 'none';
         } else if (event.target == signupModal) {
             signupModal.style.display = 'none';
+        }
+    });
+
+    contactLink.addEventListener('click', () => {
+        contactModal.style.display = 'block';
+    });
+
+    closeContactBtn.addEventListener('click', () => {
+        contactModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == contactModal) {
+            contactModal.style.display = 'none';
         }
     });
 });
