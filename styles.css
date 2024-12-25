@@ -27,7 +27,10 @@ body {
 }
 
 .navbar .logo img {
+    position: relative;
+    top: 14px;
     width: 180px;
+    padding: 2px;
 }
 
 .nav-links {
@@ -149,6 +152,30 @@ body {
     justify-content: center;
     align-items: center;
 }
+/* Style the read-more link */
+.read-more-link {
+    display: inline-block; /* Make the link behave like an inline-block element */
+    text-decoration: none; /* Remove the default underline */
+    color: inherit; /* Inherit the text color */
+}
+
+/* Style the button inside the read-more link */
+.read-more-link button {
+    display: block; /* Make the button a block element */
+    width: 100%; /* Ensure the button takes the full width of the link */
+    padding: 10px 20px;
+    border: none;
+    background: #dc3545; /* Matched button color to nav button */
+    color: #fff; /* Matched button text color to nav button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.read-more-link button:hover {
+    background: #c12e39; /* Darker shade on hover */
+}
+
 
 .card {
     background: rgba(255, 255, 255, 0.9); /* Slight transparency for cards */
@@ -202,16 +229,59 @@ body {
     cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+    .service-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Adjust font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    .navbar {
+        padding: 16px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .auth-buttons button {
+        padding: 5px 10px; /* Adjust button padding for smaller screens */
+    }
+}
+
 @media (max-width: 768px) {
     .service-cards {
-        grid-template-columns: 1fr; /* 1 column on smaller screens */
+        grid-template-columns: 1fr; /* 1 column on small screens */
     }
 
     .services {
         padding: 20px 10px; /* Adjust padding for smaller screens */
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .navbar {
+        padding: 16px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .auth-buttons button {
+        padding: 5px 8px; /* Adjust button padding for smaller screens */
+    }
+
+    .card {
+        width: 100%; /* Full width for small screens */
+        max-width: none; /* Remove max-width constraint */
     }
 }
-
 
 /* About Us Section */
 .about {
@@ -532,3 +602,5 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+
