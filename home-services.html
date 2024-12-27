@@ -34,67 +34,82 @@
                 <div class="service-description">
                     <h3>Painting</h3>
                     <p>High-quality interior and exterior painting services.</p>
-                    <a href="painting-services.html" class="read-more-link">
-                        <button>Read More</button>
-                    </a>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="assets/plumbing.jpg" alt="Plumbing">
-                <div class="service-description">
-                    <h3>Plumbing</h3>
-                    <p>Expert plumbing repairs and installations.</p>
-                    <a href="plumbing-services.html" class="read-more-link">
-                        <button>Read More</button>
-                    </a>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="assets/electrical.jpg" alt="Electrical">
-                <div class="service-description">
-                    <h3>Electrical</h3>
-                    <p>Reliable electrical installations and repairs.</p>
-                    <a href="electrical-services.html" class="read-more-link">
-                        <button>Read More</button>
-                    </a>
-                </div>
-            </div>
-            <div class="service-item">
-                <img src="assets/carpentry.jpg" alt="Carpentry">
-                <div class="service-description">
-                    <h3>Carpentry</h3>
-                    <p>Custom carpentry and woodwork services.</p>
-                    <a href="carpentry-services.html" class="read-more-link">
-                        <button>Read More</button>
+                    <a href="#" class="more-link" data-modal="paintingModal">
+                        <button>More</button>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li>Terms & Conditions</li>
-                    <li>Privacy Policy</li>
-                    <li>Help Center</li>
-                </ul>
+    <!-- Painting Modal -->
+    <div id="paintingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Painting Services</h2>
             </div>
-            <div class="follow-us">
-                <h3>Follow Us</h3>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-            <div class="subscribe">
-                <h3>Subscribe</h3>
-                <input type="email" placeholder="Enter your email">
-                <button>Subscribe</button>
+            <div class="modal-body">
+                <div class="modal-image" style="background-image: url('assets/painting.jpg');"></div>
+                <div class="modal-form">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zipcode">Zip Code:</label>
+                                <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zip code">
+                            </div>
+                            <div class="form-group">
+                                <label for="datetime">Date & Time:</label>
+                                <input type="datetime-local" id="datetime" name="datetime">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number:</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="userDescription">Description:</label>
+                            <textarea id="userDescription" name="userDescription" placeholder="Describe your painting needs here..."></textarea>
+                        </div>
+                        <div class="modal-buttons">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <!-- JavaScript to handle modal -->
+    <script>
+        document.querySelectorAll('.more-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.close').forEach(span => {
+            span.addEventListener('click', function() {
+                this.parentElement.parentElement.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function(event) {
+            document.querySelectorAll('.modal').forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
