@@ -1,56 +1,80 @@
 /* Home Services Content Section */
 .home-services-content {
     padding: 40px 20px;
-    background: #ffffff; /* White background for contrast */
+    background: #f9f2e9; /* Match the background color of your website */
     color: #333;
     text-align: center;
 }
 
 .home-services-content h2 {
-    font-size: 28px;
+    font-size: 36px; /* Match the font size of your hero section */
     margin-bottom: 20px;
+    color: #333333; /* Ensure the text color matches */
 }
 
-.service-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with min width */
+    gap: 20px; /* Space between grid items */
+    justify-content: center;
 }
 
-.service-section img {
-    width: 40%; /* Adjust image size */
+.service-item {
+    background: rgba(255, 255, 255, 0.9); /* Slight transparency for cards */
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Match the box-shadow of your cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .service-description {
-    width: 55%; /* Adjust description width */
-    text-align: left; /* Align text to the left for better readability */
+    text-align: center;
 }
 
 .service-description h3 {
-    font-size: 24px;
+    font-size: 24px; /* Adjust font size to match the headings */
     margin-bottom: 10px;
-    color: #dc3545; /* Match color theme */
+    color: #0d6efd; /* Match the color theme */
 }
 
 .service-description p {
+    font-size: 18px; /* Adjust font size to match your site */
+    margin-bottom: 15px;
+}
+
+.read-more-link {
+    display: inline-block; /* Make the link behave like an inline-block element */
+    text-decoration: none; /* Remove the default underline */
+    color: inherit; /* Inherit the text color */
+}
+
+.read-more {
+    background: #dc3545; /* Match the button color to nav button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 16px;
+    transition: background 0.3s ease; /* Add smooth transition */
+}
+
+.read-more:hover {
+    background: #c12e39; /* Darker shade on hover */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .service-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .service-section img, .service-description {
-        width: 100%;
-    }
-
-    .service-description {
-        text-align: center;
+    .services-grid {
+        grid-template-columns: 1fr; /* Single column layout for small screens */
     }
 }
