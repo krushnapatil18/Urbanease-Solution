@@ -26,90 +26,131 @@
     </nav>
 
     <!-- Home Services Content -->
-    <section class="home-services-content">
-        <h2>Our Expertise</h2>
-        <div class="services-grid">
-            <div class="service-item">
-                <img src="assets/painting.jpg" alt="Painting">
-                <div class="service-description">
-                    <h3>Painting</h3>
-                    <p>High-quality interior and exterior painting services.</p>
-                    <a href="#" class="more-link" data-modal="paintingModal">
-                        <button>More</button>
-                    </a>
+    <div class="container">
+        <!-- Painting Section -->
+        <section class="service-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h2>Painting Services</h2>
+                    <ul>
+                        <li>Interior painting</li>
+                        <li>Exterior painting</li>
+                        <li>Wall painting</li>
+                        <li>Ceiling painting</li>
+                        <li>Trim painting</li>
+                    </ul>
+                    <a href="#" class="more-button">More</a>
+                </div>
+                <div class="image-content">
+                    <img src="assets/painting.jpg" alt="Painting" class="section-image">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Painting Modal -->
-    <div id="paintingModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-header">
-                <h2>Painting Services</h2>
-            </div>
-            <div class="modal-body">
-                <div class="modal-image" style="background-image: url('assets/painting.jpg');"></div>
-                <div class="modal-form">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="zipcode">Zip Code:</label>
-                                <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zip code">
-                            </div>
-                            <div class="form-group">
-                                <label for="datetime">Date & Time:</label>
-                                <input type="datetime-local" id="datetime" name="datetime">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number:</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="userDescription">Description:</label>
-                            <textarea id="userDescription" name="userDescription" placeholder="Describe your painting needs here..."></textarea>
-                        </div>
-                        <div class="modal-buttons">
-                            <button type="submit">Submit</button>
-                            <button type="reset">Reset</button>
-                        </div>
-                    </form>
+        <!-- Plumbing Section -->
+        <section class="service-section">
+            <div class="content-wrapper reverse">
+                <div class="text-content">
+                    <h2>Plumbing Services</h2>
+                    <ul>
+                        <li>Leak repairs</li>
+                        <li>Fixture installations</li>
+                        <li>Drain cleaning</li>
+                        <li>Pipe replacements</li>
+                        <li>Water heater services</li>
+                    </ul>
+                    <a href="#" class="more-button">More</a>
+                </div>
+                <div class="image-content">
+                    <img src="assets/plumbing.jpg" alt="Plumbing" class="section-image">
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Electrical Section -->
+        <section class="service-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h2>Electrical Services</h2>
+                    <ul>
+                        <li>Wiring and rewiring</li>
+                        <li>Outlet installations</li>
+                        <li>Lighting installations</li>
+                        <li>Electrical panel upgrades</li>
+                        <li>Ceiling fan installations</li>
+                    </ul>
+                    <a href="#" class="more-button">More</a>
+                </div>
+                <div class="image-content">
+                    <img src="assets/electrical.jpg" alt="Electrical" class="section-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Carpentry Section -->
+        <section class="service-section">
+            <div class="content-wrapper reverse">
+                <div class="text-content">
+                    <h2>Carpentry Services</h2>
+                    <ul>
+                        <li>Custom furniture</li>
+                        <li>Cabinet installations</li>
+                        <li>Trim and molding</li>
+                        <li>Deck building and repair</li>
+                        <li>Door and window framing</li>
+                    </ul>
+                    <a href="#" class="more-button">More</a>
+                </div>
+                <div class="image-content">
+                    <img src="assets/carpentry.jpg" alt="Carpentry" class="section-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Cleaning Section -->
+        <section class="service-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h2>Cleaning Services</h2>
+                    <ul>
+                        <li>Regular cleaning</li>
+                        <li>Deep cleaning</li>
+                        <li>Carpet cleaning</li>
+                        <li>Window cleaning</li>
+                        <li>Post-construction cleaning</li>
+                    </ul>
+                    <a href="#" class="more-button">More</a>
+                </div>
+                <div class="image-content">
+                    <img src="assets/cleaning.jpg" alt="Cleaning" class="section-image">
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- JavaScript to handle modal -->
-    <script>
-        document.querySelectorAll('.more-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const modalId = this.getAttribute('data-modal');
-                document.getElementById(modalId).style.display = 'block';
-            });
-        });
-
-        document.querySelectorAll('.close').forEach(span => {
-            span.addEventListener('click', function() {
-                this.parentElement.parentElement.style.display = 'none';
-            });
-        });
-
-        window.addEventListener('click', function(event) {
-            document.querySelectorAll('.modal').forEach(modal => {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Help Center</li>
+                </ul>
+            </div>
+            <div class="follow-us">
+                <h3>Follow Us</h3>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="subscribe">
+                <h3>Subscribe</h3>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
